@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" package="com.tranzmate" platformBuildVersionCode="29" platformBuildVersionName="10">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <permission android:name="com.tranzmate.permission.BROADCAST_RECEIVER" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.tranzmate.permission.BROADCAST_RECEIVER"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_APP_BADGE"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ"/>
+    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE"/>
+    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:fullBackupContent="false" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.moovit.app.MoovitAppApplication" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/MoovitTheme" android:usesCleartextTraffic="true">
+        <provider android:authorities="com.facebook.app.FacebookContentProvider284644261627721" android:exported="true" android:name="com.facebook.FacebookContentProvider"/>
+        <meta-data android:name="asset_statements" android:resource="@string/asset_statements"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/app_name"/>
+        <meta-data android:name="com.appsflyer.AppKey" android:value="ScpwNvZu3YH4RtUzzFXrEZ"/>
+        <meta-data android:name="com.moovit.zendesk.config" android:value="@string/zendesk_config"/>
+        <activity android:name="com.moovit.app.intro.FirstTimeUseTermsAndConditionsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <receiver android:label="@string/station_widget_name" android:name="com.moovit.app.appwidgets.FavoritesWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/favorite_widget_info"/>
+        </receiver>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_api_key"/>
+        <meta-data android:name="com.google.android.awareness.API_KEY" android:value="@string/google_api_key"/>
+        <meta-data android:name="com.google.android.nearby.messages.API_KEY" android:value="@string/google_api_key"/>
+        <meta-data android:name="firebase_performance_collection_enabled" android:value="false"/>
+        <activity android:launchMode="singleTop" android:name="com.moovit.app.home.HomeActivity" android:screenOrientation="portrait" android:theme="@style/MoovitLauncherTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="nearby" android:scheme="moovit"/>
+                <data android:host="lines" android:scheme="moovit"/>
+                <data android:host="wallet" android:scheme="moovit"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="moovitapp.com" android:path="/getapp" android:scheme="https"/>
+                <data android:host="moovitapp.com" android:path="/getapp" android:scheme="http"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.moovit.app.search.OmniSearchActivity" android:parentActivityName="com.moovit.app.home.HomeActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing|stateVisible">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".home.HomeActivity"/>
+        </activity>
+        <activity android:name="com.moovit.app.search.LocationSearchActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustNothing|stateVisible"/>
+        <activity android:label="@string/stop_details_activity_title" android:launchMode="singleTop" android:name="com.moovit.app.stopdetail.StopDetailActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:name="com.moovit.app.stopdetail.StopDetailMapActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:label="@string/edit_welcome_activity_label" android:name="com.moovit.app.editing.EditStopOverviewActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/edit_stop_details_activity_title" android:name="com.moovit.app.editing.entity.EditStopEntityActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/edit_stop_pathway_activity_title" android:name="com.moovit.app.editing.entity.EditPathwayEntityActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/edit_welcome_activity_label" android:name="com.moovit.app.editing.welcome.EditorWelcomeActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/line_detail_activity_title" android:name="com.moovit.app.linedetail.ui.LineDetailActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="line" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/line_detail_activity_title" android:name="com.moovit.app.linedetail.ui.SelectFavoriteLineStopsActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.moovit.app.linedetail.ui.LineTripPatternActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/line_schedule_activity_title" android:name="com.moovit.app.lineschedule.LineScheduleActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.moovit.app.realtimehelp.RealTimeHelpActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme"/>
+        <activity android:label="@string/suggest_routes_title" android:launchMode="singleTop" android:name="com.moovit.app.suggestedroutes.SuggestRoutesActivity" android:parentActivityName="com.moovit.app.home.HomeActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value=".home.HomeActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="directions" android:scheme="moovit"/>
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="geo"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/carpool_passenger_book_ride_header" android:name="com.moovit.app.carpool.fastbooking.CarpoolBookRideRequestActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark"/>
+        <activity android:label="@string/suggest_routes_title" android:launchMode="singleTop" android:name="com.moovit.app.offline.tripplanner.OfflineTripPlannerActivity" android:parentActivityName="com.moovit.app.home.HomeActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark"/>
+        <activity android:label="@string/suggest_routes_title" android:launchMode="singleTop" android:name="com.moovit.app.offline.tripplanner.PartialOfflineTripPlannerActivity" android:parentActivityName="com.moovit.app.home.HomeActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark"/>
+        <service android:name="com.moovit.offline.TripPlannerService" android:stopWithTask="true"/>
+        <activity android:label="@string/settings" android:name="com.moovit.app.general.settings.SettingsActivity" android:parentActivityName="com.moovit.app.home.HomeActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.moovit.app.home.HomeActivity"/>
+        </activity>
+        <activity android:label="@string/notification" android:name="com.moovit.app.general.settings.notifications.NotificationSettingsActivity" android:parentActivityName="com.moovit.app.general.settings.SettingsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.moovit.app.general.settings.SettingsActivity"/>
+        </activity>
+        <activity android:label="" android:name="com.moovit.app.suggestedroutes.TripPlanOptionsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/settings_map" android:name="com.moovit.app.general.settings.map.MapSettingsActivity" android:parentActivityName="com.moovit.app.general.settings.SettingsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="com.moovit.app.general.settings.SettingsActivity"/>
+        </activity>
+        <activity android:label="@string/settings_privacy_label" android:name="com.moovit.app.general.settings.privacy.PrivacySettingsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:name="com.moovit.app.general.settings.privacy.PrivacyUpdateActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/change_metro_title" android:name="com.moovit.app.metro.selection.ChangeMetroActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/select_metro_title" android:name="com.moovit.app.metro.selection.SelectMetroActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/metro_language" android:name="com.moovit.app.metro.selection.ChangeMetroLanguageActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/action_spread_the_love" android:name="com.moovit.app.general.SpreadTheLoveActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/offline_maps_title" android:name="com.moovit.app.general.transportationmaps.TransportationMapsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/about_and_contact" android:name="com.moovit.app.general.aboutandcontact.AboutAndContactActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/partners_and_thanks" android:name="com.moovit.app.general.aboutandcontact.AckActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/edit_profile_title" android:name="com.moovit.app.useraccount.profile.EditProfileActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/mood" android:name="com.moovit.app.general.userprofile.avatars.AvatarsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/moovit_level" android:name="com.moovit.app.general.userprofile.levels.TrophiesActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:name="com.moovit.app.intro.FirstTimeUseActivityImpl" android:screenOrientation="portrait" android:theme="@style/MoovitFirstTimeUse"/>
+        <activity android:name="com.moovit.app.intro.onboarding.OnboardingActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.TransparentStatusBar"/>
+        <activity android:label="" android:name="com.moovit.app.intro.onboarding.OnboardingLoginActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow"/>
+        <activity android:name="com.moovit.app.intro.UserCreationFailureActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.TransparentStatusBar"/>
+        <activity android:label="@string/service_alerts_line_header" android:name="com.moovit.app.reports.list.LinesReportsListActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/stop_reports_title" android:name="com.moovit.app.reports.list.StopsReportsListActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/line_reports_title" android:name="com.moovit.app.reports.community.CommunityLineReportsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="@string/stop_reports_title" android:name="com.moovit.app.reports.community.CommunityStopReportsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="@string/service_alert_details_activity_title" android:name="com.moovit.app.servicealerts.ServiceAlertDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="moovitapp.com" android:pathPattern="/.*/alerts/.*" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/service_alerts_activity_title" android:name="com.moovit.app.servicealerts.ServiceAlertsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/line_service_alerts_selection_activity_title" android:name="com.moovit.app.servicealerts.LineServiceAlertSelectionActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow"/>
+        <activity android:name="com.moovit.app.servicealerts.LineServiceAlertDigestsChooserActivity" android:theme="@style/MoovitDialogTheme.BottomSheet"/>
+        <activity android:label="@string/service_alerts_twitter_feed_title" android:name="com.moovit.app.servicealerts.TwitterFeedActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar"/>
+        <activity android:label="@string/add_location_title" android:name="com.moovit.app.home.dashboard.FavoriteLocationEditorActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar.NoShadow" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:label="@string/trip_history" android:name="com.moovit.app.history.TripHistoryActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark"/>
+        <activity android:label="@string/itinerary_activity_title" android:name="com.moovit.app.itinerary.ItineraryActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme"/>
+        <activity android:label="@string/itinerary_activity_title" android:name="com.moovit.app.itinerary.list.ItineraryListActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar"/>
+        <activity android:label="@string/tripplan_itinerary_schedule_activity_title" android:name="com.moovit.app.itinerary.schedule.ItineraryScheduleActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar"/>
+        <activity android:label="@string/itinerary_no_group_activity_title" android:name="com.moovit.app.itinerary.nogroup.ItineraryNoGroupActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar"/>
+        <activity android:autoRemoveFromRecents="true" android:launchMode="singleTask" android:name="com.moovit.app.itinerary.external.ExternalItineraryActivity" android:noHistory="true" android:screenOrientation="portrait" android:theme="@style/MoovitLauncherTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="itinerary" android:name="android.content.Intent.FLAG_ACTIVITY_NO_ANIMATION" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/tripplan_itinerary_title_steps" android:name="com.moovit.app.itinerary.StepByStepActivity" android:screenOrientation="portrait" android:theme="@style/MoovitStepByStepTheme"/>
+        <activity android:label="@string/tripplan_itinerary_live_directions_title" android:name="com.moovit.app.navigation.MultiLegNavActivity" android:screenOrientation="portrait" android:theme="@style/MoovitLiveTheme"/>
+        <activity android:label="@string/user_account_connect_title" android:name="com.moovit.app.useraccount.ConnectActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/user_account_connect_title" android:name="com.moovit.app.useraccount.ConnectPopUpActivity" android:theme="@style/MoovitDialogTheme"/>
+        <activity android:label="@string/user_account_signup" android:name="com.moovit.app.useraccount.providers.moovit.MoovitConnectProviderActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/user_account_connect_community_label" android:name="com.moovit.app.useraccount.ConnectEditorActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/carpool_ride_details_activity_title" android:launchMode="singleTop" android:name="com.moovit.app.carpool.ridedetails.CarpoolRideDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="moovitapp.com" android:pathPrefix="/r/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="*.moovitapp.com" android:path="/content/carpool/passenger/ride_details" android:scheme="http"/>
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="carpool_ride_details" android:path="/" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/more_menu_notification_center" android:name="com.moovit.app.useraccount.notifications.UserNotificationsCenterActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/carpool_ride_route_activity_title" android:launchMode="singleTop" android:name="com.moovit.app.carpool.ridedetails.route.CarpoolRideRouteActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow"/>
+        <activity android:label="@string/carpool_driver_profile_activity_title" android:launchMode="singleTop" android:name="com.moovit.app.carpool.driver.CarpoolDriverProfileActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/carpool_passenger_ride_request_details_header" android:launchMode="singleTop" android:name="com.moovit.app.carpool.fastbooking.CarpoolRideRequestDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar.NoShadow"/>
+        <activity android:label="@string/carpool_registration_activity_title" android:name="com.moovit.app.carpool.registration.CarpoolRegistrationActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustResize|stateUnchanged"/>
+        <activity android:label="@string/carpool_center" android:launchMode="singleTop" android:name="com.moovit.app.carpool.center.CarpoolCenterActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar"/>
+        <activity android:label="@string/carpool_center_add_credit_card" android:name="com.moovit.app.carpool.payment.CarpoolAddCreditCardActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar"/>
+        <activity android:label="@string/carpool_company_information_activity_title" android:name="com.moovit.app.carpool.driver.CarpoolCompanyEditor" android:screenOrientation="portrait" android:theme="@style/MoovitFullDialogTheme"/>
+        <activity android:label="@string/carpool_past_rides_activity_title" android:name="com.moovit.app.carpool.history.CarpoolHistoryActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar"/>
+        <activity android:name="com.moovit.app.carpool.CarpoolProfilePopupActivity" android:theme="@style/MoovitDialogTheme.FullScreen.Translucent"/>
+        <activity android:name="com.moovit.app.carpool.CarpoolIntroActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.TransparentStatusBar"/>
+        <activity android:label="@string/carpool_all_suggested_rides_activity_title" android:name="com.moovit.app.carpool.CarpoolTripPlanActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar"/>
+        <activity android:launchMode="singleTop" android:name="com.moovit.app.ridesharing.EventDetailActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow"/>
+        <activity android:label="@string/ride_sharing_center" android:launchMode="singleTop" android:name="com.moovit.app.ridesharing.RideSharingCenterActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.TextualActions"/>
+        <activity android:label="@string/ride_sharing_all_events_activity_title" android:name="com.moovit.app.ridesharing.AllEventsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/event_booking_activity_title" android:launchMode="singleTop" android:name="com.moovit.app.ridesharing.booking.EventBookingActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="moovitapp.com" android:pathPrefix="/e/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="moovitapp.com" android:pathPrefix="/ee/" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:launchMode="singleTop" android:name="com.moovit.app.ridesharing.registration.RideSharingRegistrationActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustResize|stateUnchanged">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="rs_registration" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/ride_sharing_profile_title" android:name="com.moovit.app.ridesharing.registration.RideSharingProfileActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/ride_sharing_profile_update_title" android:name="com.moovit.app.ridesharing.registration.RideSharingProfileUpdateActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/wondo_offers_screen_title" android:launchMode="singleTop" android:name="com.moovit.app.wondo.tickets.offers.WondoOffersActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="wondo_offers" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/wondo_offers_screen_title" android:name="com.moovit.app.wondo.tickets.offers.WondoOfferDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="wondo_offer" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/wondo_codes_screen_title" android:launchMode="singleTop" android:name="com.moovit.app.wondo.tickets.codes.WondoCodesActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="wondo_codes" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/wondo_codes_screen_title" android:name="com.moovit.app.wondo.tickets.codes.WondoCodeDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/ride_sharing_campaign_title" android:name="com.moovit.app.useraccount.campaigns.CampaignActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:name="com.moovit.app.gallery.GalleryActivity" android:screenOrientation="portrait" android:theme="@style/MoovitGalleryTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.moovit.app.stopdetail.StopGalleryActivity" android:screenOrientation="portrait" android:theme="@style/MoovitGalleryTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/feedback_form_title" android:name="com.moovit.app.help.feedback.FeedbackFormActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="feedback" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:launchMode="singleTop" android:name="com.moovit.app.help.helpcenter.HelpCenterActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme" android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="helpcenter" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/feedback_form_type_title" android:name="com.moovit.app.help.feedback.FeedbackTypeSelectionActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/app_name" android:name="com.moovit.app.share.proxy.SharedEntityProxyActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="moovitapp.com" android:pathPrefix="/i/" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:launchMode="singleTop" android:name="com.moovit.app.tod.order.TodOrderActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="tod_order" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/tod_passenger_ride_label_active" android:launchMode="singleTop" android:name="com.moovit.app.tod.TodRideActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:label="@string/tod_passenger_rides_center_activity_title" android:name="com.moovit.app.tod.ridescenter.TodRidesCenterActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:label="@string/tod_passenger_rides_details_title" android:launchMode="singleTop" android:name="com.moovit.app.tod.ridescenter.TodRideDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="moovitapp.com" android:pathPrefix="/tr/" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.moovit.app.wondo.consent.WondoConsentActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark"/>
+        <activity android:label="@string/wondo_rewards_title" android:launchMode="singleTop" android:name="com.moovit.app.wondo.tickets.rewards.WondoRewardsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="wondo_rewards" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/wondo_reward_details_title" android:name="com.moovit.app.wondo.tickets.rewards.WondoRewardDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:launchMode="singleTop" android:name="com.moovit.app.wondo.tickets.fullscreen.WondoFullScreenActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="wondo_full_screen" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/wondo_invite_title" android:name="com.moovit.app.wondo.tickets.invite.WondoInviteActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="wondo_invite" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/ataf_ticketing_screen_title" android:name="com.moovit.app.ataf.AtafTicketsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <service android:name="com.moovit.app.appwidgets.FavoritesWidgetRemoteService" android:permission="android.permission.BIND_REMOTEVIEWS"/>
+        <service android:exported="true" android:name="com.moovit.app.index.AppIndexingUpdateService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="true" android:name="com.moovit.app.index.UpdateIndexWithSearchHistoryService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.moovit.app.index.AppIndexingUpdateReceiver" android:permission="com.google.android.gms.permission.APPINDEXING">
+            <intent-filter>
+                <action android:name="com.google.firebase.appindexing.UPDATE_INDEX"/>
+            </intent-filter>
+        </receiver>
+        <activity android:label="" android:name="com.moovit.app.surveys.SurveyContainerActivity" android:screenOrientation="portrait" android:theme="@style/MoovitRemoteSurvey" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/payment_mot_rides_qr_header" android:name="com.moovit.app.mot.purchase.MotQrCodeScanActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="" android:name="com.moovit.app.mot.purchase.MotQrCodeActivationActivity" android:screenOrientation="portrait" android:theme="@style/MotQrCodeActivationTheme"/>
+        <activity android:label="" android:name="com.moovit.app.mot.welcome.MotAccountCreationWelcomeActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mot_registration" android:scheme="moovit"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="moovitapp.com" android:pathPrefix="/mot_registration" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/payment_mot_my_rides_title" android:name="com.moovit.app.mot.center.MotActivationCenterActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mot_ride_center" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/payment_mot_validation_title" android:name="com.moovit.app.mot.activation.MotActivationConfirmationActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar"/>
+        <activity android:label="@string/payment_mot_ride_permit_title" android:name="com.moovit.app.mot.activation.MotActivationDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar"/>
+        <activity android:label="" android:name="com.moovit.app.mot.qr.MotQrCodeViewerActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow"/>
+        <activity android:label="@string/payment_mot_entrance_entry_station_tab" android:name="com.moovit.app.mot.purchase.MotStationEntranceActivationActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow"/>
+        <activity android:label="@string/payment_mot_exit_station_tab" android:name="com.moovit.app.mot.purchase.MotStationExitActivationActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow"/>
+        <receiver android:name="com.moovit.app.surveys.SurveyManagerReceiver"/>
+        <service android:exported="true" android:name="com.moovit.app.surveys.SurveyManagerWorker" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:name="com.moovit.app.useraccount.campaigns.onboarding.OnBoardingCampaignActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark"/>
+        <activity android:name="com.braintreepayments.api.dropin.AddCardActivity" android:screenOrientation="portrait" android:theme="@style/bt_add_card_activity_theme"/>
+        <activity android:launchMode="singleTop" android:name="com.moovit.ticketing.purchase.PurchaseTicketActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="purchase_ticket" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:name="com.moovit.ticketing.purchase.fare.PurchaseTicketConfirmedActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme"/>
+        <activity android:label="" android:name="com.moovit.ticketing.purchase.extrainfo.split.PurchaseSplitActivity" android:screenOrientation="portrait" android:stateNotNeeded="true" android:theme="@style/MoovitTheme.ActionBar.NoShadow"/>
+        <activity android:label="" android:name="com.moovit.ticketing.purchase.storedvalue.PurchaseStoredValueConfirmedActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme"/>
+        <activity android:label="" android:name="com.moovit.ticketing.ticket.TicketDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow"/>
+        <activity android:label="@string/payment_touchpass_code_title" android:name="com.moovit.ticketing.validation.TicketValidationActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow"/>
+        <activity android:label="@string/tickets_center_title" android:name="com.moovit.ticketing.wallet.UserWalletActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark"/>
+        <activity android:label="@string/payment_stored_value_agency_header" android:name="com.moovit.ticketing.validation.provider.agency.TransitAgencySelectionActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar"/>
+        <activity android:label="@string/payment_transaction_screen_title" android:name="com.moovit.ticketing.purchase.history.TransactionHistoryActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark"/>
+        <activity android:label="" android:launchMode="singleTop" android:name="com.moovit.payment.registration.PaymentRegistrationActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="registration" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="com.moovit.payment.registration.steps.mot.payment.MotBitConnectResultActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="bit_connect_result" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/payment_mot_my_account_title" android:name="com.moovit.payment.account.PaymentAccountActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar" android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="payment_account" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/payment_my_account_details_title" android:name="com.moovit.payment.account.personalinfo.PaymentAccountDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar.TextualActions" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/payment_my_account_edit" android:name="com.moovit.payment.account.personalinfo.PaymentAccountEditDetailsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="" android:name="com.moovit.payment.account.profile.PaymentAccountAddProfileActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="" android:name="com.moovit.payment.account.profile.PaymentAccountEditProfileActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/payment_mot_my_invoices_title" android:name="com.moovit.payment.invoices.PaymentAccountUpcomingPaymentActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/payment_mot_my_bills_previous" android:name="com.moovit.payment.invoices.AccountInvoicesActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="payment_invoices" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/payment_my_account_services_mot_payment" android:name="com.moovit.payment.account.external.mot.MotPaymentAccountActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar">
+            <intent-filter android:autoVerify="true" android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="mot_payment_account" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="" android:name="com.moovit.payment.account.creditcard.PaymentCreditCardActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar.NoShadow.WhiteStatusBar"/>
+        <activity android:label="@string/search_locations_tab" android:name="com.moovit.search.SearchLocationActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme" android:windowSoftInputMode="adjustNothing|stateVisible"/>
+        <activity android:name="com.moovit.home.lines.search.SearchLineActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme" android:windowSoftInputMode="adjustNothing|stateVisible"/>
+        <activity android:name="com.moovit.home.lines.search.SearchLinePagerActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme" android:windowSoftInputMode="adjustNothing|stateVisible"/>
+        <activity android:name="com.moovit.home.stops.search.SearchStopActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.ActionBar" android:windowSoftInputMode="adjustNothing|stateVisible"/>
+        <activity android:label="" android:name="com.moovit.home.stops.search.SearchStopPagerActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme"/>
+        <activity android:label="@string/choose_location" android:name="com.moovit.search.SearchLocationMapActivity" android:screenOrientation="portrait" android:theme="@style/MoovitMapTheme"/>
+        <activity android:label="@string/choose_location" android:name="com.moovit.location.mappicker.MapLocationPickerActivity" android:screenOrientation="portrait" android:theme="@style/MoovitMapTheme"/>
+        <activity android:launchMode="singleTop" android:name="com.moovit.web.WebViewActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="webview" android:scheme="moovit"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.moovit.map.walking.MapWalkingDirectionsActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme" android:windowSoftInputMode="adjustNothing|stateHidden"/>
+        <activity android:label="@string/scan_code" android:name="com.moovit.qr.QRReaderActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="" android:name="com.moovit.devices.HuaweiProtectedAppIntroActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:name="com.moovit.offline.GtfsInitializeActivity" android:screenOrientation="portrait" android:theme="@style/MoovitGtfsTheme"/>
+        <activity android:name="com.moovit.offline.GraphBuildFailureActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.moovit.GooglePlayServicesUnavailableActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.moovit.view.pickers.StringsPickerActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar"/>
+        <activity android:label="@string/choose_location" android:name="com.moovit.location.ChooseLocationActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/choose_location" android:name="com.moovit.location.ChooseFixedLocationActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:label="@string/line_not_found_title" android:name="com.moovit.reports.MissingLineReportActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" android:screenOrientation="portrait" android:theme="@style/MoovitTheme.Dark.ActionBar.TextualActions" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <service android:exported="false" android:foregroundServiceType="location" android:name="com.moovit.navigation.NavigationService"/>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.moovit.gcm.GcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.moovit.gcm.GcmIntentService"/>
+        <receiver android:name="com.moovit.maintenance.MaintenanceManager">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.tranzmate.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_provider_paths"/>
+        </provider>
+        <service android:exported="true" android:name="com.moovit.sdk.SDKImpl$SDKService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":profiler"/>
+        <service android:exported="true" android:name="com.moovit.sdk.profilers.ProfilersManager" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":profiler"/>
+        <service android:exported="true" android:name="com.moovit.sdk.datacollection.visibility.LocationStatusInfoChecker" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":profiler"/>
+        <receiver android:exported="false" android:name="com.moovit.sdk.utils.WorkManagerReceiver"/>
+        <receiver android:name="com.moovit.sdk.maintenance.SdkMaintenanceManager">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:exported="true" android:name="com.moovit.sdk.profilers.ProfilersReactivator" android:process=":profiler">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.moovit.sdk.profilers.places.PlacesProfiler$StartStopReceiver" android:process=":profiler"/>
+        <receiver android:exported="false" android:name="com.moovit.sdk.profilers.places.PlacesProfiler$LocationReceiver" android:process=":profiler"/>
+        <receiver android:exported="false" android:name="com.moovit.sdk.profilers.schedule.ScheduleBasedProfiler$ScheduleFenceReceiver" android:process=":profiler"/>
+        <receiver android:exported="false" android:name="com.moovit.sdk.profilers.wifiscan.WifiScansProfiler$StartStopReceiver" android:process=":profiler"/>
+        <receiver android:exported="false" android:name="com.moovit.sdk.profilers.steps.StepsCounterProfiler$StartStopReceiver" android:process=":profiler"/>
+        <receiver android:exported="false" android:name="com.moovit.sdk.profilers.activity.ActivityProfiler$StartStopReceiver" android:process=":profiler"/>
+        <receiver android:exported="false" android:name="com.moovit.sdk.profilers.activity.ActivityProfiler$ActivityReceiver" android:process=":profiler"/>
+        <receiver android:exported="false" android:name="com.moovit.sdk.profilers.activitytransition.ActivityTransitionProfiler$StartStopReceiver" android:process=":profiler"/>
+        <receiver android:exported="false" android:name="com.moovit.sdk.profilers.activitytransition.ActivityTransitionProfiler$ActivityTransitionReceiver" android:process=":profiler"/>
+        <service android:exported="true" android:name="com.moovit.sdk.profilers.ProfilerLog$LogUploader" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":profiler"/>
+        <activity android:excludeFromRecents="true" android:name="com.moovit.commons.utils.RemoveAndFinishTaskActivity" android:noHistory="true" android:stateNotNeeded="true" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.braintreepayments.api.threedsecure.ThreeDSecureWebViewActivity" android:theme="@style/bt_three_d_secure_theme"/>
+        <activity android:name="com.braintreepayments.api.dropin.DropInActivity" android:theme="@style/bt_drop_in_activity_theme"/>
+        <activity android:name="com.braintreepayments.api.dropin.VaultManagerActivity" android:theme="@style/bt_vault_manager_activity_theme"/>
+        <provider android:authorities="com.tranzmate.firebaseperfprovider" android:exported="false" android:initOrder="101" android:name="com.google.firebase.perf.provider.FirebasePerfProvider"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <activity android:label="@string/com_masabi_justride_sdk_ticket_title" android:name="com.masabi.justride.sdk.ui.features.universalticket.UniversalTicketActivity" android:screenOrientation="portrait" android:theme="@style/JustRideSDKTheme"/>
+        <activity android:label="@string/com_masabi_justride_sdk_ticket_title" android:name="com.masabi.justride.sdk.ui.features.ticket.TicketActivity" android:theme="@style/JustRideSDKTheme"/>
+        <activity android:label="@string/com_masabi_justride_sdk_ticket_info_title" android:name="com.masabi.justride.sdk.ui.features.ticket_info.TicketInfoActivity" android:theme="@style/JustRideSDKTheme"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cct.com.tranzmate" android:scheme="fbconnect"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.twitter.sdk.android.tweetui.PlayerActivity" android:theme="@style/MediaTheme"/>
+        <activity android:name="com.twitter.sdk.android.tweetui.GalleryActivity" android:theme="@style/MediaTheme"/>
+        <activity android:configChanges="orientation|screenLayout" android:name="com.usebutton.sdk.internal.InstallCardActivity" android:theme="@style/BtnTheme.ButtonDialog"/>
+        <activity android:configChanges="orientation|screenLayout" android:name="com.usebutton.sdk.internal.GroupedInventoryCardActivity" android:theme="@style/BtnTheme.ButtonDialog"/>
+        <activity android:configChanges="orientation|screenLayout" android:name="com.usebutton.sdk.internal.SingleProductCardActivity" android:screenOrientation="portrait" android:theme="@style/BtnTheme.ButtonDialog"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.usebutton.sdk.internal.WebViewActivity" android:theme="@style/BtnTheme.ButtonFullScreen"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.usebutton.sdk.internal.AuthChallengeActivity" android:theme="@style/BtnTheme.ButtonAuthChallenge"/>
+        <activity android:configChanges="orientation|screenLayout|screenSize" android:name="com.usebutton.sdk.internal.InstallSheetActivity" android:theme="@style/BtnTheme.ButtonMerchantAction"/>
+        <receiver android:exported="true" android:name="com.usebutton.sdk.internal.receivers.LocaleChangedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.usebutton.sdk.internal.receivers.InstallNotificationReceiver"/>
+        <activity android:name="com.braintreepayments.api.AndroidPayActivity" android:theme="@style/bt_transparent_activity"/>
+        <activity android:name="com.braintreepayments.api.GooglePaymentActivity" android:theme="@style/bt_transparent_activity"/>
+        <service android:name="com.braintreepayments.api.internal.AnalyticsIntentService"/>
+        <provider android:authorities="com.tranzmate.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <receiver android:exported="false" android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" android:visibleToInstantApps="true"/>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.google.firebase.auth.internal.GenericIdpActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="firebase.auth" android:path="/" android:scheme="genericidp"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:exported="true" android:launchMode="singleTask" android:name="com.google.firebase.auth.internal.RecaptchaActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="firebase.auth" android:path="/" android:scheme="recaptcha"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="true" android:exported="false" android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService">
+            <intent-filter>
+                <action android:name="com.google.firebase.auth.api.gms.service.START"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="false" android:name="com.appboy.ui.AppboyWebViewActivity"/>
+        <activity android:exported="false" android:name="com.appboy.ui.activities.AppboyFeedActivity"/>
+        <activity android:exported="false" android:name="com.appboy.ui.activities.AppboyContentCardsActivity"/>
+        <activity android:exported="false" android:launchMode="singleInstance" android:name="com.appboy.push.AppboyNotificationRoutingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:exported="false" android:name="com.appboy.BrazePushReceiver"/>
+        <provider android:authorities="com.tranzmate.firebaseinitprovider" android:directBootAware="true" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+        <provider android:authorities="com.tranzmate.workmanager-init" android:directBootAware="false" android:exported="false" android:multiprocess="true" android:name="androidx.work.impl.WorkManagerInitializer"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:name="androidx.work.impl.foreground.SystemForegroundService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="false" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"/>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.tranzmate.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+        <activity android:exported="false" android:name="com.twitter.sdk.android.tweetcomposer.ComposerActivity" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <service android:enabled="true" android:exported="false" android:name="com.twitter.sdk.android.tweetcomposer.TweetUploadService"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:name="com.twitter.sdk.android.core.identity.OAuthActivity"/>
+        <activity android:enabled="false" android:exported="false" android:launchMode="singleInstance" android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity" android:process=":playcore_missing_splits_activity" android:stateNotNeeded="true"/>
+        <activity android:enabled="false" android:exported="false" android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity" android:stateNotNeeded="true" android:theme="@style/Theme.PlayCore.Transparent"/>
+        <service android:enabled="false" android:exported="true" android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"/>
+        <receiver android:exported="false" android:name="com.appboy.receivers.AppboyActionReceiver"/>
+        <meta-data android:name="com.android.dynamic.apk.fused.modules" android:value="base"/>
+        <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_STANDALONE_APK"/>
+        <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="6"/>
+    </application>
+</manifest>

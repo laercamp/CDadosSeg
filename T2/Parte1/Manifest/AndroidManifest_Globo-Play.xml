@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="30" android:compileSdkVersionCodename="11" package="com.globo.globotv" platformBuildVersionCode="30" platformBuildVersionName="11">
+    <uses-feature android:name="android.hardware.LOCATION" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.B"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.globo.globotv.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.globo.globotv.permission.PUSHIO_MESSAGE"/>
+    <uses-permission android:name="com.motorola.dtv.RECEIVE_TUNER_STREAM"/>
+    <permission android:name="com.globo.globotv.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <permission android:name="com.globo.globotv.permission.PUSHIO_MESSAGE" android:protectionLevel="signature"/>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:scheme="*"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:maxSdkVersion="18" android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-feature android:name="android.software.leanback" android:required="false"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:fullBackupContent="@xml/appsflyer_backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/globoplay_application_name" android:largeHeap="true" android:name="com.globo.globotv.MobileApplication" android:networkSecurityConfig="@xml/network_security_config" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="false" android:theme="@style/Theme.Mobile" android:usesCleartextTraffic="true">
+        <activity android:name="com.globo.globotv.splash.SplashActivity" android:screenOrientation="portrait" android:theme="@style/Theme.BrandedLaunch">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.globo.globotv.sales.SalesActivity" android:theme="@style/Theme.Translucent">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="globoplay.globo.com" android:pathPattern="/assine-mobile/..*/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="globoplay.globo.com" android:pathPattern="/assine-mobile/" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.globo.globotv.sales.SalesUpdatePlanActivity"/>
+        <activity android:name="com.globo.globotv.profile.ProfileActivity" android:theme="@style/Theme.Translucent"/>
+        <activity android:name="com.globo.globotv.settings.SettingsActivity"/>
+        <activity android:name="com.globo.globotv.mylist.MyListActivity"/>
+        <activity android:name="com.globo.globotv.overdue.OverdueActivity"/>
+        <activity android:name="com.globo.globotv.carrier.CarrierActivity"/>
+        <activity android:label="" android:name="com.globo.globotv.old.AllRelatedMediasActivity" android:theme="@style/Fullscreen"/>
+        <activity android:name="com.globo.globotv.about.AboutActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleTask" android:name="com.globo.globotv.old.VideoActivity" android:theme="@style/AppTheme"/>
+        <activity android:launchMode="singleTask" android:name="com.globo.globotv.video.NewVideoActivity" android:screenOrientation="sensorLandscape" android:theme="@style/Theme.Translucent" android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="globoplay.globo.com" android:pathPattern="/v/.*" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.globo.globotv.tutorial.TutorialActivity"/>
+        <activity android:name="com.globo.globotv.versioncontrol.VersionControlActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.globo.globotv.home.HomeActivity" android:theme="@style/Theme.Translucent" android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:path="/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:path="/busca/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:path="/programacao/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPattern="/agora-na-globo/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPattern="/agora-na-tv/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPattern="/transmissoes/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPattern="/transmissoes/..*/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPattern="/..*/ao-vivo/..*/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPrefix="/categorias/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPrefix="/canais/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPrefix="/podcasat/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPrefix="/categorias/..*/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPrefix="/canais/..*/" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPattern="..*/p/..*" android:scheme="https"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="com.globo.globotv.ADLABSDK_NOTIFICATION_CLICK"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="globoplay.globo.com" android:pathPattern="/..*/t/..*" android:scheme="https"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
+        </activity>
+        <activity android:name="com.globo.globotv.basetest.TestActivity" android:theme="@style/Theme.Base"/>
+        <activity android:name="com.globo.globotv.profile.ExitKidsModeActivity" android:theme="@style/Theme.Translucent"/>
+        <activity android:name="com.loopnow.fireworklibrary.PlaybackActivity" android:screenOrientation="portrait" android:theme="@style/FireworkSDK.NoActionBar.FullScreen"/>
+        <activity android:name="com.loopnow.fireworklibrary.views.FireworkWebClientActivity" android:theme="@style/FireworkSDK.NoActionBar.FullScreen"/>
+        <service android:name="com.loopnow.fireworklibrary.views.CacheService"/>
+        <service android:exported="true" android:name="com.globo.globotv.configuration.ConfigurationJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="true" android:name="com.globo.globotv.download2go.services.DownloadCompletionJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:enabled="true" android:name="com.krux.androidsdk.aggregator.EventPublisherService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:exported="true" android:name="com.globo.globotv.push.FirebaseMessagingReceiver" android:priority="-600">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.appsflyer.MultipleInstallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.gms.measurement.UPLOAD"/>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:exported="true" android:name="com.globo.globotv.download2go.ui.NotificationBroadcastReceiver"/>
+        <meta-data android:name="Firework:AppID" android:value="cJumeHPlY_cZaMDDxZx6NCrIeUQiOJWH"/>
+        <meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP" android:value="true"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.globo.vending.sdk.PublicKey" android:value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi3F5InPpR/QXK88k8npLXT4swulUhSHFzWGl9sZs8HQtDV8BRvTgnFjk8DDfVoVFopmFSSXmwPU88K4kga3oGymAD3FHiqs8tx0ao07fjmvzaTL+hCuXssPcOmmm3lNy7kNWXgpHY0g6I8B5iW3CkCBt7Arw17ULTi37naLOiBGHUcetw69y6Ka1ZesusgdD762qCpj9RzDX73VmVoZUOBzZiBelAkcoJhkmLG0WpJGVWhKmrYYkIzeKtyFS0v0DfmQvunc2KD5Pe/MibUQaLlpGE5XHdn7AzzWFjFpIsOWI4f5wI2zJVc3k7bqdUy3vJveWwwQpXzgP2G0CVT6nBwIDAQAB"/>
+        <meta-data android:name="com.globo.vending.sdk.AppId" android:value="globoplay-android"/>
+        <meta-data android:name="firebase_performance_logcat_enabled" android:value="false"/>
+        <meta-data android:name="firebase_performance_collection_enabled" android:value="false"/>
+        <meta-data android:name="download.notification" android:value="com.globo.globotv.download2go.ui.GloboPlayDownloadNotification"/>
+        <meta-data android:name="com.urbanairship.autopilot" android:value="com.globo.globotv.push.UrbanAutoPilot"/>
+        <meta-data android:name="com.globo.adlabsdk.ic_notification" android:resource="@drawable/ic_notification"/>
+        <meta-data android:name="com.globo.adlabsdk.notification_color" android:resource="@color/torch_red"/>
+        <meta-data android:name="com.globo.adlabsdk.sdk_uuid" android:value="64224cab-8507-4960-9191-fcd4a1a2ee8f"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.globo.globovendassdk.presenter.scene.registration.RegistrationActivity" android:theme="@style/globo_sdk_vendas_theme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.globo.globovendassdk.presenter.scene.error.ErrorActivity" android:theme="@style/globo_sdk_vendas_theme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.globo.globovendassdk.presenter.scene.change.ChangeProductActivity" android:theme="@style/globo_sdk_vendas_theme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTask" android:name="com.globo.globovendassdk.presenter.scene.message.MessageActivity" android:theme="@style/globo_sdk_vendas_theme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.globo.globovendassdk.presenter.scene.error.ContractActivity" android:theme="@style/globo_sdk_vendas_theme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.globo.globovendassdk.presenter.scene.state.StateActivity" android:theme="@style/globo_sdk_vendas_theme" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:exported="true" android:name="com.globo.globovendassdk.openidconnect.UriRedirectCompleteActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="com.globo.globovendassdk:/openid"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="appAuthRedirect" android:value="com.globo.globovendassdk:/openid"/>
+        <activity android:configChanges="orientation|screenSize" android:launchMode="singleTask" android:name="com.salesforce.android.chat.ui.internal.chatfeed.ChatFeedActivity" android:theme="@style/SalesforceTheme" android:windowSoftInputMode="stateHidden"/>
+        <activity android:configChanges="orientation" android:launchMode="singleTask" android:name="com.salesforce.android.chat.ui.internal.prechat.PreChatActivity" android:theme="@style/SalesforceTheme.Floating"/>
+        <meta-data android:name="preloaded_fonts" android:resource="@array/preloaded_fonts"/>
+        <activity android:launchMode="singleTask" android:name="com.globo.audiopubplayer.presentation.activity.AudioPubPlayerActivity" android:screenOrientation="portrait"/>
+        <service android:enabled="true" android:name="com.globo.audiopubplayer.service.PlayerBackgroundService"/>
+        <meta-data android:name="BITMOVIN_PLAYER_LICENSE_KEY" android:value="adbdd25a-f280-4684-ac2b-23441b0163a2"/>
+        <service android:name="com.bitmovin.player.offline.service.BitmovinDownloadService"/>
+        <service android:exported="true" android:name="com.bitmovin.android.exoplayer2.scheduler.PlatformScheduler$PlatformSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:name="br.com.altran.android.subscriber_club_lib.core.presentation.tv.VoteTVActivity" android:theme="@style/ActivityWithoutTitle"/>
+        <activity android:name="br.com.altran.android.subscriber_club_lib.core.presentation.mobile.ErrorActivity"/>
+        <activity android:name="br.com.altran.android.subscriber_club_lib.core.presentation.mobile.SuccessVoteActivity"/>
+        <activity android:name="br.com.altran.android.subscriber_club_lib.core.presentation.mobile.editvote.EditVoteActivity"/>
+        <activity android:name="br.com.altran.android.subscriber_club_lib.core.presentation.mobile.vote.VoteActivity"/>
+        <activity android:name="com.globo.playkit.salesplancardfaq.com.globo.playkit.faqcardview.mobile.SalesPlanCardFaqTestActivity"/>
+        <activity android:name="com.globo.playkit.now.NowTestActivity"/>
+        <meta-data android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME" android:value="tv.com.globo.chromecastdeviceservice.implementation.GoogleCastOptionsProvider"/>
+        <activity android:name="tv.com.globo.globocastsdk.view.castControls.expanded.ExpandedCastControlsActivity" android:screenOrientation="portrait" android:theme="@style/ActivityExpandedCastControls"/>
+        <service android:enabled="true" android:exported="true" android:name="tv.com.globo.globocastsdk.view.castControls.background.BackgroundPlaybackService">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:exported="false" android:name="tv.com.globo.globocastsdk.view.castControls.background.PlaybackControlsBroadcast">
+            <intent-filter>
+                <action android:name="globocast.PlaybackControlsBroadcastAction"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.globo.adlabsdk.push.PushClickReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.NOTIFICATION_CLICK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.globo.adlabsdk.push.PushDismissReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.NOTIFICATION_DISMISS"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.globo.adlabsdk.push.AdLabMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+            <meta-data android:name="firebase_messaging_auto_init_enabled" android:value="false"/>
+            <meta-data android:name="firebase_analytics_collection_enabled" android:value="false"/>
+        </service>
+        <meta-data android:name="com.penthera.virtuososdk.sharedcookiemanager.disabled" android:value="true"/>
+        <meta-data android:name="com.penthera.virtuososdk.client.pckg" android:value="com.globo.globotv.virtuoso.content.provider"/>
+        <meta-data android:name="com.penthera.virtuososdk.license.manager.impl" android:value="com.globo.video.penthera.drm.PentheraLicenseManager"/>
+        <service android:label="VirtuosoService" android:name="com.penthera.virtuososdk.service.VirtuosoService" android:process=":service"/>
+        <service android:enabled="true" android:exported="false" android:label="VirtuosoClientHTTPService" android:name="com.penthera.virtuososdk.service.VirtuosoClientHTTPService">
+            <intent-filter>
+                <action android:name="virtuoso.intent.action.START_VIRTUOSO_CLIENT_HTTP_SERVICE"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="true" android:label="VirtuosoServiceMessageReceiver" android:name="com.penthera.virtuososdk.service.VirtuosoService$ServiceMessageReceiver" android:process=":service"/>
+        <provider android:authorities="com.globo.globotv.virtuoso.content.provider" android:name="com.globo.video.penthera.Andy2GoContentProvider" android:process=":vservicec"/>
+        <receiver android:directBootAware="true" android:enabled="true" android:label="VirtuosoServiceStarter" android:name="com.globo.video.penthera.notification.PentheraVirtuosoServiceStarter" android:process=":starter">
+            <intent-filter>
+                <action android:name="virtuoso.intent.action.START_SERVICE"/>
+                <action android:name="virtuoso.intent.action.SERVICE_NOTIFICATION_UPDATE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+                <action android:name="virtuoso.intent.action.DOWNLOAD_UPDATE"/>
+                <action android:name="virtuoso.intent.action.CONFIGURE_VIRTUOSO_SERVICE_LOGGING"/>
+                <action android:name="virtuoso.intent.action.BACKPLANE_SYNC_DEVICE"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="virtuoso.intent.action.START_SERVICE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:label="NotificationReceiver" android:name="com.globo.video.penthera.notification.NotificationReceiver" android:process=":receiver">
+            <intent-filter>
+                <action android:name="com.globo.globotv.virtuoso.content.provider.NOTIFICATION_DOWNLOAD_START"/>
+                <action android:name="com.globo.globotv.virtuoso.content.provider.NOTIFICATION_DOWNLOAD_STOPPED"/>
+                <action android:name="com.globo.globotv.virtuoso.content.provider.NOTIFICATION_DOWNLOAD_COMPLETE"/>
+                <action android:name="com.globo.globotv.virtuoso.content.provider.NOTIFICATION_DOWNLOAD_UPDATE"/>
+                <action android:name="com.globo.globotv.virtuoso.content.provider.NOTIFICATION_DOWNLOADS_PAUSED"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.penthera.virtuososdk.clienthttpservice.enabled" android:value="true"/>
+        <receiver android:enabled="true" android:name="com.penthera.virtuososdk.interfaces.toolkit.VirtuosoContentBox$SystemBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="true" android:name="com.penthera.virtuososdk.interfaces.toolkit.VirtuosoContentBox$ClientMessageReceiver"/>
+        <provider android:authorities="com.globo.globotv.VirtuosoWorkManager" android:exported="false" android:multiprocess="false" android:name="com.penthera.virtuososdk.database.impl.provider.VirtuosoWorkManagerInitializer"/>
+        <receiver android:exported="false" android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver"/>
+        <service android:exported="false" android:name="com.google.android.gms.cast.framework.media.MediaNotificationService"/>
+        <service android:exported="false" android:name="com.google.android.gms.cast.framework.ReconnectionService"/>
+        <activity android:label="@string/mcsdk_iam_activity_label" android:name="com.salesforce.marketingcloud.messages.iam.IamModalActivity" android:theme="@style/McSdk.Modal"/>
+        <activity android:label="@string/mcsdk_iam_activity_label" android:name="com.salesforce.marketingcloud.messages.iam.IamBannerActivity" android:theme="@style/McSdk.Banner"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/mcsdk_iam_activity_label" android:name="com.salesforce.marketingcloud.messages.iam.IamFullscreenActivity" android:theme="@style/McSdk.Fullscreen"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/mcsdk_iam_activity_label" android:name="com.salesforce.marketingcloud.messages.iam.IamFullImageFillActivity" android:theme="@style/McSdk.Fullscreen"/>
+        <receiver android:exported="false" android:name="com.salesforce.marketingcloud.location.LocationReceiver"/>
+        <service android:exported="false" android:name="com.salesforce.marketingcloud.MCService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="com.salesforce.marketingcloud.NotificationOpenedService"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.salesforce.marketingcloud.MCReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="com.globo.globotv.com.salesforce.marketingcloud.WAKE_FOR_ALARM"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.salesforce.marketingcloud.messages.push.MCFirebaseMessagingService">
+            <intent-filter android:priority="-1">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.globo.globotv.com.salesforce.marketingcloud.initprovider" android:enabled="true" android:exported="false" android:name="com.salesforce.marketingcloud.MCInitContentProvider"/>
+        <meta-data android:name="asset_statements" android:resource="@string/asset_statements"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationName" android:value="@string/app_name"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:name="com.facebook.FacebookActivity" android:theme="@style/com_facebook_activity_theme"/>
+        <activity android:exported="true" android:label="@string/title_activity_globo_idlogin" android:launchMode="singleTask" android:name="com.globo.globoidsdk.view.GloboIDActivity" android:screenOrientation="portrait" android:theme="@style/GloboIDSDKTheme" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTask" android:name="com.globo.globoidsdk.view.GloboIDCrossAuthActivity" android:theme="@style/GloboIDSDKTheme.Transparent"/>
+        <activity android:launchMode="singleTask" android:name="com.globo.globoidsdk.view.userdata.GloboIDUserDataEnhancementActivity" android:theme="@style/GloboIDSDKTheme"/>
+        <service android:exported="true" android:name="com.globo.globoidsdk.service.GloboAuthService" android:process=":auth">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+        <service android:name="com.globo.globoidsdk.eventtracker.HorizonBatchService"/>
+        <service android:enabled="true" android:exported="true" android:name="com.globo.globoidsdk.service.SharedGloboIDInfoService" android:process="com.globo.globoidsdk.selectaccount">
+            <intent-filter>
+                <action android:name="com.globo.globoidsdk.service.SharedGloboIDInfoService.START"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.globo.globotv.firebaseperfprovider" android:exported="false" android:initOrder="101" android:name="com.google.firebase.perf.provider.FirebasePerfProvider"/>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.perf.FirebasePerfRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <service android:name="com.salesforce.android.chat.core.internal.service.ChatService"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="cct.com.globo.globotv" android:scheme="fbconnect"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.salesforce.android.service.common.liveagentlogging.internal.service.LiveAgentLoggingService"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <service android:exported="true" android:name="com.google.android.gms.auth.api.signin.RevocationBoundService" android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"/>
+        <activity android:clearTaskOnLaunch="true" android:name="com.journeyapps.barcodescanner.CaptureActivity" android:screenOrientation="sensorLandscape" android:stateNotNeeded="true" android:theme="@style/zxing_CaptureTheme" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsReceiver"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.analytics.AnalyticsJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:exported="false" android:name="com.urbanairship.push.fcm.AirshipFirebaseMessagingService">
+            <intent-filter android:priority="-1">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.tagmanager.TagManagerService"/>
+        <activity android:exported="true" android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity" android:noHistory="true">
+            <intent-filter>
+                <data android:scheme="tagmanager.c.com.globo.globotv"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+        </activity>
+        <service android:name="com.globo.globoid.pushauth.PushAuthFCMListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <service android:directBootAware="true" android:exported="false" android:name="com.google.firebase.messaging.FirebaseMessagingService">
+            <intent-filter android:priority="-500">
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="false" android:name="com.urbanairship.push.NotificationProxyActivity" android:taskAffinity="com.urbanairship.push.NotificationProxyActivity" android:theme="@android:style/Theme.NoDisplay"/>
+        <activity android:exported="false" android:name="com.urbanairship.util.HelperActivity" android:theme="@style/UrbanAirship.HelperActivity">
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+        </activity>
+        <activity android:exported="false" android:name="com.urbanairship.google.PlayServicesErrorActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+        </activity>
+        <activity android:exported="false" android:name="com.urbanairship.actions.RateAppActivity" android:theme="@style/UrbanAirship.RateAppActivity">
+            <meta-data android:name="com.urbanairship.push.iam.EXCLUDE_FROM_AUTO_SHOW" android:value="true"/>
+            <intent-filter>
+                <action android:name="com.urbanairship.actions.SHOW_RATE_APP_INTENT_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:name="com.urbanairship.actions.WalletLoadingActivity" android:noHistory="true"/>
+        <service android:name="com.urbanairship.job.AirshipService"/>
+        <service android:name="com.urbanairship.job.AndroidJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.urbanairship.push.NotificationProxyReceiver">
+            <intent-filter android:priority="-999">
+                <action android:name="com.urbanairship.push.OPENED"/>
+                <category android:name="com.globo.globotv"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.urbanairship.locale.LocaleChangeReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.globo.globotv.urbanairship.provider" android:exported="false" android:name="com.urbanairship.UrbanAirshipProvider"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:exported="false" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <provider android:authorities="com.globo.globotv.mobileadsinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.android.gms.ads.MobileAdsInitProvider"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.ads.AdService"/>
+        <activity android:exported="false" android:launchMode="singleTask" android:name="net.openid.appauth.AuthorizationManagementActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:name="net.openid.appauth.RedirectUriReceiverActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="com.globo.globovendassdk"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="com.globo.globotv.FacebookInitProvider" android:exported="false" android:name="com.facebook.internal.FacebookInitProvider"/>
+        <receiver android:exported="false" android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_job_service_default" android:exported="true" android:name="androidx.work.impl.background.systemjob.SystemJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service android:directBootAware="false" android:enabled="@bool/enable_system_foreground_service_default" android:exported="false" android:name="androidx.work.impl.foreground.SystemForegroundService"/>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="false" android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"/>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy">
+            <intent-filter>
+                <action android:name="android.intent.action.DEVICE_STORAGE_LOW"/>
+                <action android:name="android.intent.action.DEVICE_STORAGE_OK"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="false" android:exported="false" android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="@bool/enable_system_alarm_service_default" android:exported="false" android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver">
+            <intent-filter>
+                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver" android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS"/>
+            </intent-filter>
+        </receiver>
+        <service android:directBootAware="true" android:exported="false" android:name="androidx.room.MultiInstanceInvalidationService"/>
+        <provider android:authorities="com.globo.globotv.com.squareup.picasso" android:exported="false" android:name="com.squareup.picasso.PicassoProvider"/>
+        <provider android:authorities="com.globo.globotv.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery">
+            <meta-data android:name="backend:com.google.android.datatransport.cct.CctBackendFactory" android:value="cct"/>
+        </service>
+        <service android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <receiver android:exported="false" android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"/>
+        <activity android:name="androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity" android:theme="@android:style/Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity" android:theme="@android:style/Theme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity" android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.play.billingclient.version" android:value="3.0.1"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:name="com.android.billingclient.api.ProxyBillingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.android.dynamic.apk.fused.modules" android:value="base"/>
+        <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
+        <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_STANDALONE_APK"/>
+        <meta-data android:name="com.android.vending.splits" android:resource="@xml/splits0"/>
+        <meta-data android:name="com.android.vending.derived.apk.id" android:value="1"/>
+    </application>
+</manifest>
